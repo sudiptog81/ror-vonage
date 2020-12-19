@@ -1,0 +1,16 @@
+<% content_for(:title) { 'SMS API' } %>
+
+<div class="jumbotron">
+  <h1 class="display-2">SMS API</h1>
+  <%= form_tag do %>
+    <div class="form-group">
+      <%= label_tag :number, 'Number' %>
+      <%= text_field_tag :number, nil, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :text, 'Text' %>
+      <%= text_area_tag :text, nil, class: 'form-control' %>
+    </div>
+    <%= submit_tag 'Send', class: %w[btn btn-primary] %>
+  <% end %>
+</div>

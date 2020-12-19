@@ -1,0 +1,12 @@
+<% content_for(:title) { 'Number Insights API' } %>
+
+<div class="jumbotron">
+  <h1 class="display-2">Number Insights API</h1>
+  <%= form_tag do %>
+    <div class="form-group">
+      <%= label_tag :number, 'Number' %>
+      <%= text_field_tag :number, nil, class: 'form-control' %>
+    </div>
+    <%= submit_tag 'Query', class: %w[btn btn-primary] %>
+  <% end %>
+</div>

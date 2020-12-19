@@ -1,0 +1,28 @@
+<% content_for(:title) { 'Voice API' } %>
+
+<div class="jumbotron">
+  <h1 class="display-2">Voice API</h1>
+  <%= form_tag do %>
+    <div class="form-group">
+      <%= label_tag :number, 'Number' %>
+      <%= text_field_tag :number, nil, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :text, 'Text' %>
+      <%= text_area_tag :text, nil, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :loop, 'Loop' %>
+      <%= number_field_tag :loop, nil, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :language, 'Language' %>
+      <%= select_tag :language, options_for_select(%w[en-IN hi-IN]), class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :style, 'Style' %>
+      <%= select_tag :style, options_for_select(%i[0 1 2 3 4]), class: 'form-control' %>
+    </div>
+    <%= submit_tag 'Call', class: %w[btn btn-primary] %>
+  <% end %>
+</div>
