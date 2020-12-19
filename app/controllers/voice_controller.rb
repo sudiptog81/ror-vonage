@@ -21,13 +21,19 @@ class VoiceController < ApplicationController
           type: 'phone',
           number: ENV['VONAGE_NUMBER']
         },
-        ncco: [{
-          action: 'talk',
-          language: params[:language],
-          loop: params[:loop],
-          style: params[:style],
-          text: params[:text]
-        }]
+        ncco: [
+          {
+            action: 'stream',
+            streamUrl: [ENV['STREAM_URL']]
+          },
+          {
+            action: 'talk',
+            language: params[:language],
+            loop: params[:loop],
+            style: params[:style],
+            text: params[:text]
+          }
+        ]
       )
       flash.now[:notice] = "Call request sent to #{params[:number]}!" if call[:status] == 'started'
     end
